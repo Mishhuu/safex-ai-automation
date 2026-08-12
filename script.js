@@ -1,0 +1,1 @@
+console.log("SafeX AI Automation landing page loaded.");

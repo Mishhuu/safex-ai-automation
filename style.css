@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background: #ffffff;
+}
+
+header {
+    background: #071b3a;
+    padding: 20px 8%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+    background: linear-gradient(135deg, #eef5ff, #ffffff);
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.small-title {
+    color: #b01c45;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin: 15px 0;
+    color: #071b3a;
+}
+
+.hero h1 span {
+    color: #b01c45;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: #b01c45;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.section {
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.section h2,
+.about h2,
+.contact h2 {
+    color: #071b3a;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.section-text {
+    max-width: 650px;
+    margin: auto;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.card {
+    width: 30%;
+    padding: 30px;
+    border-radius: 10px;
+    background: #f5f7fb;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    color: #b01c45;
+    margin-bottom: 10px;
+}
+
+.about {
+    padding: 70px 8%;
+    text-align: center;
+    background: #eef3fa;
+}
+
+.about p {
+    max-width: 700px;
+    margin: auto;
+}
+
+.contact {
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.contact p {
+    margin: 15px 0 25px;
+}
+
+footer {
+    background: #071b3a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+}
