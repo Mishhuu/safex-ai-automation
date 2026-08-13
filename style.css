@@ -1,172 +1,617 @@
+/* =========================
+   RESET
+========================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #222;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #172033;
     background: #ffffff;
+    line-height: 1.6;
 }
 
-header {
-    background: #071b3a;
-    padding: 20px 8%;
+a {
+    text-decoration: none;
 }
 
-nav {
+button {
+    font-family: inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #e8ebf1;
+}
+
+.navbar {
+    max-width: 1180px;
+    margin: auto;
+    padding: 18px 25px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-nav h2 {
-    color: white;
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #14213d;
+}
+
+.logo span {
+    color: #c2185b;
 }
 
 .nav-links {
     display: flex;
-    gap: 25px;
+    align-items: center;
+    gap: 28px;
 }
 
 .nav-links a {
-    color: white;
-    text-decoration: none;
+    color: #3d4658;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
+.nav-links a:hover {
+    color: #c2185b;
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #14213d;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: #c2185b;
+    color: #ffffff;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    border: 1px solid #d8dce5;
+    color: #172033;
+    background: #ffffff;
+}
+
+.secondary-btn:hover {
+    border-color: #c2185b;
+    color: #c2185b;
+}
+
+.white-btn {
+    background: #ffffff;
+    color: #14213d;
+}
+
+.white-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
 .hero {
-    min-height: 500px;
-    display: flex;
+    max-width: 1180px;
+    margin: auto;
+    min-height: 650px;
+    padding: 80px 25px;
+
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
     align-items: center;
-    padding: 70px 8%;
-    background: linear-gradient(135deg, #eef5ff, #ffffff);
+    gap: 60px;
 }
 
 .hero-content {
     max-width: 700px;
 }
 
-.small-title {
-    color: #b01c45;
-    font-weight: bold;
-    letter-spacing: 2px;
+.badge {
+    display: inline-block;
+    padding: 8px 13px;
+    margin-bottom: 20px;
+
+    border-radius: 50px;
+    background: #fce8f1;
+    color: #c2185b;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
 .hero h1 {
-    font-size: 48px;
-    margin: 15px 0;
-    color: #071b3a;
-}
-
-.hero h1 span {
-    color: #b01c45;
-}
-
-.hero p {
-    font-size: 18px;
+    color: #14213d;
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1.08;
     margin-bottom: 25px;
 }
 
-.btn {
-    display: inline-block;
-    background: #b01c45;
-    color: white;
-    padding: 13px 25px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
+.hero h1 span {
+    display: block;
+    color: #c2185b;
 }
+
+.hero-content > p {
+    max-width: 650px;
+    color: #5e687a;
+    font-size: 18px;
+    margin-bottom: 32px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+
+/* Hero Card */
+
+.hero-card {
+    padding: 38px;
+    border-radius: 20px;
+
+    background: #14213d;
+    color: #ffffff;
+
+    box-shadow: 0 20px 50px rgba(20, 33, 61, 0.18);
+}
+
+.card-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 14px;
+    background: #c2185b;
+
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.hero-card h3 {
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.hero-card p {
+    color: #dce2ec;
+    margin-bottom: 30px;
+}
+
+.mini-stat {
+    padding-top: 20px;
+    border-top: 1px solid #3a465e;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mini-stat strong {
+    font-size: 25px;
+    color: #f4a9c7;
+}
+
+.mini-stat span {
+    color: #dce2ec;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
 
 .section {
-    padding: 70px 8%;
-    text-align: center;
-}
-
-.section h2,
-.about h2,
-.contact h2 {
-    color: #071b3a;
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-.section-text {
-    max-width: 650px;
+    padding: 100px 25px;
+    max-width: 1180px;
     margin: auto;
 }
 
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 40px;
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 55px;
+    text-align: center;
 }
 
-.card {
-    width: 30%;
-    padding: 30px;
-    border-radius: 10px;
-    background: #f5f7fb;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+.section-heading.left {
+    margin: 0;
+    text-align: left;
 }
 
-.card h3 {
-    color: #b01c45;
+.section-label {
+    color: #c2185b;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
     margin-bottom: 10px;
 }
 
-.about {
-    padding: 70px 8%;
-    text-align: center;
-    background: #eef3fa;
+.section-heading h2,
+.about-box h2 {
+    color: #14213d;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.2;
+    margin-bottom: 18px;
 }
 
-.about p {
-    max-width: 700px;
+.section-heading h2 span {
+    color: #c2185b;
+}
+
+.section-heading > p:last-child,
+.about-box > p:last-child {
+    color: #667085;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    padding: 35px;
+    border: 1px solid #e7eaf0;
+    border-radius: 15px;
+    background: #ffffff;
+
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(20, 33, 61, 0.09);
+}
+
+.service-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+    background: #fce8f1;
+    color: #c2185b;
+
+    font-size: 25px;
+    margin-bottom: 22px;
+}
+
+.service-card h3 {
+    color: #14213d;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    color: #667085;
+}
+
+
+/* =========================
+   BENEFITS
+========================= */
+
+.benefits {
+    background: #f5f7fb;
+}
+
+.benefits-content {
+    max-width: 1180px;
+    margin: auto;
+    padding: 100px 25px;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.benefit-list {
+    display: grid;
+    gap: 20px;
+}
+
+.benefit {
+    display: flex;
+    gap: 18px;
+    padding: 20px;
+
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e7eaf0;
+}
+
+.check {
+    min-width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #fce8f1;
+    color: #c2185b;
+    font-weight: bold;
+}
+
+.benefit h3 {
+    color: #14213d;
+    margin-bottom: 4px;
+}
+
+.benefit p {
+    color: #667085;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    text-align: center;
+}
+
+.about-box {
+    max-width: 780px;
     margin: auto;
 }
 
-.contact {
-    padding: 70px 8%;
+.about-box h2 {
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    background: #14213d;
+    color: #ffffff;
     text-align: center;
 }
 
-.contact p {
-    margin: 15px 0 25px;
+.cta-content {
+    max-width: 750px;
+    margin: auto;
+    padding: 100px 25px;
 }
 
-footer {
-    background: #071b3a;
-    color: white;
+.cta .section-label {
+    color: #f4a9c7;
+}
+
+.cta h2 {
+    font-size: clamp(34px, 5vw, 52px);
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.cta p {
+    color: #dce2ec;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    background: #0d172b;
+    color: #cbd3e0;
+    padding: 45px 25px 20px;
+}
+
+.footer-content {
+    max-width: 1180px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-logo {
+    color: #ffffff;
+}
+
+.footer-content p {
+    margin-top: 10px;
+    max-width: 350px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: #cbd3e0;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+.copyright {
+    max-width: 1180px;
+    margin: 35px auto 0;
+    padding-top: 20px;
+
+    border-top: 1px solid #29344a;
+
     text-align: center;
-    padding: 20px;
+    font-size: 13px;
 }
 
 
-/* Mobile */
+/* =========================
+   TABLET
+========================= */
 
-@media (max-width: 700px) {
+@media (max-width: 850px) {
 
-    nav {
-        flex-direction: column;
-        gap: 15px;
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 60px;
     }
 
-    .hero h1 {
-        font-size: 36px;
+    .hero-card {
+        max-width: 600px;
     }
 
-    .cards {
-        flex-direction: column;
+    .service-grid {
+        grid-template-columns: 1fr 1fr;
     }
 
-    .card {
-        width: 100%;
+    .benefits-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .menu-btn {
+        display: block;
     }
 
     .nav-links {
-        gap: 15px;
+        display: none;
+
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+
+        padding: 20px;
+
+        background: #ffffff;
+        border-bottom: 1px solid #e8ebf1;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
     }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 65px 20px;
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero-content > p {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-buttons .btn {
+        text-align: center;
+    }
+
+    .hero-card {
+        padding: 28px;
+    }
+
+    .section {
+        padding: 75px 20px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits-content {
+        padding: 75px 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+
 }
